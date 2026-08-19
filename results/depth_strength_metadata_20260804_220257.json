@@ -1,0 +1,175 @@
+{
+  "experiment_timestamp": "20260804_220257",
+  "experiment_name": "formal_depth_strength_matches",
+  "baseline_depth": 2,
+  "challenger_depths": [
+    2,
+    3,
+    4
+  ],
+  "algorithm": "ordered",
+  "opening_count": 12,
+  "games_per_depth": 24,
+  "scheduled_games": 72,
+  "max_engine_plies": 160,
+  "colour_control": "Each opening is played twice: challenger as White and Black.",
+  "truncation_policy": "Truncated games use result=\"*\" and are excluded from the primary completed-game score rate.",
+  "primary_strength_metric": "Score rate over completed games.",
+  "node_counting_convention": "Recursive successor positions are counted; root excluded.",
+  "timer": "time.perf_counter",
+  "result_csv": "results/depth_strength_final_results_20260804_220257.csv",
+  "summary_csv": "results/depth_strength_summary_20260804_220257.csv",
+  "checkpoint_csv": "results/depth_strength_checkpoint_20260804_220257.csv",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_chess_version": "1.11.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "openings": [
+    {
+      "name": "starting_position",
+      "family": "starting_position",
+      "moves": [],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "name": "open_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5"
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+    },
+    {
+      "name": "italian_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "Bc5"
+      ],
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+    },
+    {
+      "name": "ruy_lopez",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6"
+      ],
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+    },
+    {
+      "name": "scotch_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "exd4"
+      ],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+    },
+    {
+      "name": "sicilian_defence",
+      "family": "semi_open_game",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4"
+      ],
+      "fen": "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+    },
+    {
+      "name": "french_defence",
+      "family": "semi_open_game",
+      "moves": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "Nc3",
+        "Nf6"
+      ],
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+    },
+    {
+      "name": "caro_kann_defence",
+      "family": "semi_open_game",
+      "moves": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "Nc3",
+        "dxe4"
+      ],
+      "fen": "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+    },
+    {
+      "name": "queens_gambit_declined",
+      "family": "closed_game",
+      "moves": [
+        "d4",
+        "d5",
+        "c4",
+        "e6",
+        "Nc3",
+        "Nf6"
+      ],
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+    },
+    {
+      "name": "slav_defence",
+      "family": "closed_game",
+      "moves": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6"
+      ],
+      "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+    },
+    {
+      "name": "kings_indian_defence",
+      "family": "indian_game",
+      "moves": [
+        "d4",
+        "Nf6",
+        "c4",
+        "g6",
+        "Nc3",
+        "Bg7"
+      ],
+      "fen": "rnbqk2r/ppppppbp/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+    },
+    {
+      "name": "english_opening",
+      "family": "flank_opening",
+      "moves": [
+        "c4",
+        "e5",
+        "Nc3",
+        "Nf6",
+        "g3",
+        "d5"
+      ],
+      "fen": "rnbqkb1r/ppp2ppp/5n2/3pp3/2P5/2N3P1/PP1PPP1P/R1BQKBNR w KQkq - 0 4"
+    }
+  ]
+}

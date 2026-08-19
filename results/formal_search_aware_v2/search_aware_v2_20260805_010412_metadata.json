@@ -1,0 +1,217 @@
+{
+  "experiment_timestamp": "20260805_010412",
+  "experiment_name": "formal_search_aware_time_allocation",
+  "design_status": "V2 rules frozen before the formal 48-game run",
+  "research_comparison": "fixed allocation versus V2 search-stability-aware allocation",
+  "base_time_per_move_seconds": [
+    0.1,
+    0.2
+  ],
+  "opening_count": 12,
+  "games_per_budget": 24,
+  "scheduled_games": 48,
+  "max_engine_plies": 160,
+  "max_iterative_depth": 8,
+  "player_move_capacity": 80,
+  "initial_clock_formula": "base_time_per_move * ceil(max_engine_plies / 2)",
+  "fairness_control": "Both players receive the same initial total clock and use the same evaluator, deterministic move ordering, timed ordered Alpha-Beta core, maximum depth, openings, and colour-pairing rules. Only the iterative-deepening time controller differs.",
+  "fixed_policy": "Use min(base_time_per_move, remaining_clock) and start successively deeper iterations until the deadline interrupts one.",
+  "v2_policy": "Begin with the uncertain 1.0x target; after completed iterations, classify search stability and use a 0.8x, 1.0x, or 2.0x target. Start the next depth only when its predicted full cost fits.",
+  "stability_time_multipliers": {
+    "stable": 0.8,
+    "uncertain": 1.0,
+    "unstable": 2.0
+  },
+  "future_reserve_factor": 0.8,
+  "stability_thresholds_centipawn_like_points": {
+    "unstable_score_change_min": 75,
+    "narrow_observed_root_gap_max": 25
+  },
+  "stability_rule": {
+    "unstable": "all three instability signals are present: best move changed, absolute score change >= 75, and observed root score gap <= 25",
+    "uncertain": "exactly two of the three instability signals are present, or cross-depth history is not yet available",
+    "stable": "zero or one of the three instability signals is present",
+    "forced_move": "stable",
+    "interpretation": "stable, uncertain, and unstable mean low, medium, and high corroborated evidence of search instability"
+  },
+  "observed_root_gap_caveat": "Root alpha/beta bounds are shared exactly as in V1, so non-principal root scores can be bounds. The gap is a confidence proxy, not an exact minimax margin; it cannot trigger the 2.0x allocation alone.",
+  "next_iteration_prediction": {
+    "formula": "last_iteration_time * geometric_mean(time_growth, node_growth) * safety_factor, with growth clamped",
+    "safety_factor": 1.1,
+    "minimum_growth": 1.5,
+    "maximum_growth": 8.0
+  },
+  "formal_run_rule": "Do not change budgets, thresholds, multipliers, prediction constants, openings, maximum depth, or maximum plies after the formal run begins; do not tune V2 after observing formal outcomes.",
+  "truncation_policy": "Games reaching max_engine_plies use result=\"*\" and are excluded from the primary completed-game score rate.",
+  "primary_strength_metric": "V2 score rate over completed games.",
+  "primary_efficiency_metric": "Incomplete-iteration node fraction compared with Fixed.",
+  "secondary_metrics": [
+    "average completed depth",
+    "actual decision time deducted from equal clocks",
+    "nodes per move",
+    "policy boundary-stop rate",
+    "stability-class distribution",
+    "depth-0 fallbacks"
+  ],
+  "timer": "time.perf_counter",
+  "paths": {
+    "game_checkpoint": "results/formal_search_aware_v2\\search_aware_v2_20260805_010412_game_checkpoint.csv",
+    "move_checkpoint": "results/formal_search_aware_v2\\search_aware_v2_20260805_010412_move_checkpoint.csv",
+    "game_results": "results/formal_search_aware_v2\\search_aware_v2_20260805_010412_game_results.csv",
+    "move_results": "results/formal_search_aware_v2\\search_aware_v2_20260805_010412_move_results.csv",
+    "summary": "results/formal_search_aware_v2\\search_aware_v2_20260805_010412_summary.csv",
+    "metadata": "results/formal_search_aware_v2\\search_aware_v2_20260805_010412_metadata.json"
+  },
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_chess_version": "1.11.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "openings": [
+    {
+      "name": "starting_position",
+      "family": "starting_position",
+      "moves": [],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "name": "open_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5"
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+    },
+    {
+      "name": "italian_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "Bc5"
+      ],
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+    },
+    {
+      "name": "ruy_lopez",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6"
+      ],
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+    },
+    {
+      "name": "scotch_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "exd4"
+      ],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+    },
+    {
+      "name": "sicilian_defence",
+      "family": "semi_open_game",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4"
+      ],
+      "fen": "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+    },
+    {
+      "name": "french_defence",
+      "family": "semi_open_game",
+      "moves": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "Nc3",
+        "Nf6"
+      ],
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+    },
+    {
+      "name": "caro_kann_defence",
+      "family": "semi_open_game",
+      "moves": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "Nc3",
+        "dxe4"
+      ],
+      "fen": "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+    },
+    {
+      "name": "queens_gambit_declined",
+      "family": "closed_game",
+      "moves": [
+        "d4",
+        "d5",
+        "c4",
+        "e6",
+        "Nc3",
+        "Nf6"
+      ],
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+    },
+    {
+      "name": "slav_defence",
+      "family": "closed_game",
+      "moves": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6"
+      ],
+      "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+    },
+    {
+      "name": "kings_indian_defence",
+      "family": "indian_game",
+      "moves": [
+        "d4",
+        "Nf6",
+        "c4",
+        "g6",
+        "Nc3",
+        "Bg7"
+      ],
+      "fen": "rnbqk2r/ppppppbp/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+    },
+    {
+      "name": "english_opening",
+      "family": "flank_opening",
+      "moves": [
+        "c4",
+        "e5",
+        "Nc3",
+        "Nf6",
+        "g3",
+        "d5"
+      ],
+      "fen": "rnbqkb1r/ppp2ppp/5n2/3pp3/2P5/2N3P1/PP1PPP1P/R1BQKBNR w KQkq - 0 4"
+    }
+  ]
+}

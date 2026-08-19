@@ -1,0 +1,25 @@
+opening_name,opening_moves,challenger_depth,baseline_depth,challenger_color,white_depth,black_depth,white_algorithm,black_algorithm,result,challenger_score,plies_played,final_evaluation_white_perspective,total_white_nodes,total_black_nodes
+starting_position,,2,2,white,2,2,ordered,ordered,1/2-1/2,0.5,48,-752,5679,4955
+starting_position,,2,2,black,2,2,ordered,ordered,1/2-1/2,0.5,48,-752,5679,4955
+open_game,e4 e5,2,2,white,2,2,ordered,ordered,0-1,0.0,58,-100000,4330,4445
+open_game,e4 e5,2,2,black,2,2,ordered,ordered,0-1,1.0,58,-100000,4330,4445
+ruy_lopez,e4 e5 Nf3 Nc6 Bb5 a6,2,2,white,2,2,ordered,ordered,1/2-1/2,0.5,15,-157,1372,1002
+ruy_lopez,e4 e5 Nf3 Nc6 Bb5 a6,2,2,black,2,2,ordered,ordered,1/2-1/2,0.5,15,-157,1372,1002
+queens_pawn,d4 d5 c4,2,2,white,2,2,ordered,ordered,1/2-1/2,0.5,19,446,781,1353
+queens_pawn,d4 d5 c4,2,2,black,2,2,ordered,ordered,1/2-1/2,0.5,19,446,781,1353
+starting_position,,3,2,white,3,2,ordered,ordered,1/2-1/2,0.5,80,-58,65588,5268
+starting_position,,3,2,black,2,3,ordered,ordered,0-1,1.0,44,-100000,4030,50417
+open_game,e4 e5,3,2,white,3,2,ordered,ordered,1/2-1/2,0.5,80,1517,55150,5478
+open_game,e4 e5,3,2,black,2,3,ordered,ordered,0-1,1.0,46,-100000,5075,74568
+ruy_lopez,e4 e5 Nf3 Nc6 Bb5 a6,3,2,white,3,2,ordered,ordered,1-0,1.0,43,100000,36430,4341
+ruy_lopez,e4 e5 Nf3 Nc6 Bb5 a6,3,2,black,2,3,ordered,ordered,0-1,1.0,44,-100000,4670,47264
+queens_pawn,d4 d5 c4,3,2,white,3,2,ordered,ordered,1/2-1/2,0.5,28,674,39355,2870
+queens_pawn,d4 d5 c4,3,2,black,2,3,ordered,ordered,0-1,1.0,49,-100000,2910,41888
+starting_position,,4,2,white,4,2,ordered,ordered,1/2-1/2,0.5,80,1661,400334,5748
+starting_position,,4,2,black,2,4,ordered,ordered,0-1,1.0,58,-100000,5038,333914
+open_game,e4 e5,4,2,white,4,2,ordered,ordered,1/2-1/2,0.5,80,555,363266,6102
+open_game,e4 e5,4,2,black,2,4,ordered,ordered,0-1,1.0,40,-100000,3862,156147
+ruy_lopez,e4 e5 Nf3 Nc6 Bb5 a6,4,2,white,4,2,ordered,ordered,1-0,1.0,33,100000,48038,1412
+ruy_lopez,e4 e5 Nf3 Nc6 Bb5 a6,4,2,black,2,4,ordered,ordered,0-1,1.0,40,-100000,3832,214480
+queens_pawn,d4 d5 c4,4,2,white,4,2,ordered,ordered,1-0,1.0,80,100000,385127,7498
+queens_pawn,d4 d5 c4,4,2,black,2,4,ordered,ordered,1/2-1/2,0.5,80,-2098,6791,440602

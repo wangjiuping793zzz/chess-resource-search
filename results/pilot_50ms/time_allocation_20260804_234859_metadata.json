@@ -1,0 +1,70 @@
+{
+  "experiment_timestamp": "20260804_234859",
+  "experiment_name": "formal_time_allocation_matches",
+  "research_comparison": "fixed versus volatility-aware dynamic allocation",
+  "base_time_per_move_seconds": [
+    0.05
+  ],
+  "opening_count": 1,
+  "games_per_budget": 2,
+  "scheduled_games": 2,
+  "max_engine_plies": 40,
+  "max_iterative_depth": 8,
+  "player_move_capacity": 20,
+  "initial_clock_formula": "base_time_per_move * ceil(max_engine_plies / 2)",
+  "fairness_control": "Both players receive the same initial total clock; the same evaluator, ordered Alpha-Beta implementation, maximum depth, opening, and colour-pairing rules are used.",
+  "fixed_policy": "min(base_time_per_move, remaining_clock)",
+  "dynamic_multipliers": {
+    "quiet": 0.6,
+    "normal": 1.0,
+    "volatile": 1.8
+  },
+  "future_reserve_factor": 0.25,
+  "dynamic_policy_overhead": "Volatility analysis is included in the dynamic player's decision time and deducted from its clock.",
+  "volatility_formula": {
+    "weights": {
+      "in_check": 0.35,
+      "captures": 0.25,
+      "checking_moves": 0.2,
+      "evaluation_swing": 0.2
+    },
+    "capture_normalisation": "min(capture_moves / 3, 1)",
+    "checking_move_normalisation": "min(checking_moves / 2, 1)",
+    "evaluation_swing_normalisation": "min(abs(eval_now - eval_before_last_move) / 200, 1)",
+    "quiet_if_score_below": 0.15,
+    "volatile_if_score_at_least": 0.35,
+    "otherwise": "normal"
+  },
+  "search_method": "Iterative deepening with ordered Alpha-Beta; an interrupted iteration is discarded and the last completed iteration is used.",
+  "truncation_policy": "Games reaching max_engine_plies use result=\"*\" and are excluded from the primary completed-game score rate.",
+  "primary_strength_metric": "Dynamic-policy score rate over completed games.",
+  "primary_resource_metric": "Actual decision time deducted from equal clocks.",
+  "secondary_metrics": [
+    "nodes",
+    "completed iterative-deepening depth",
+    "deadline overrun",
+    "volatility class distribution"
+  ],
+  "timer": "time.perf_counter",
+  "paths": {
+    "game_checkpoint": "results/pilot_50ms\\time_allocation_20260804_234859_game_checkpoint.csv",
+    "move_checkpoint": "results/pilot_50ms\\time_allocation_20260804_234859_move_checkpoint.csv",
+    "game_results": "results/pilot_50ms\\time_allocation_20260804_234859_game_results.csv",
+    "move_results": "results/pilot_50ms\\time_allocation_20260804_234859_move_results.csv",
+    "summary": "results/pilot_50ms\\time_allocation_20260804_234859_summary.csv",
+    "metadata": "results/pilot_50ms\\time_allocation_20260804_234859_metadata.json"
+  },
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_chess_version": "1.11.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "openings": [
+    {
+      "name": "starting_position",
+      "family": "starting_position",
+      "moves": [],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  ]
+}

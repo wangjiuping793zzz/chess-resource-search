@@ -1,0 +1,71 @@
+{
+  "experiment_timestamp": "20260804_170445",
+  "experiment_name": "fixed_depth_search_complexity",
+  "max_depth": 4,
+  "runtime_repeats": 3,
+  "runtime_summary": "median",
+  "timer": "time.perf_counter",
+  "node_counting_convention": "Recursive successor positions are counted; the root position is excluded.",
+  "approximate_effective_branching_factor": "nodes ** (1 / depth)",
+  "algorithm_run_order": "Rotated across repetitions to reduce systematic timing bias.",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_chess_version": "1.11.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "positions": [
+    {
+      "name": "starting_position",
+      "description": "Standard chess starting position",
+      "source_type": "standard_start",
+      "setup_moves_san": [],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "name": "early_opening",
+      "description": "Early Ruy Lopez opening position",
+      "source_type": "san_sequence",
+      "setup_moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6"
+      ],
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+    },
+    {
+      "name": "middlegame",
+      "description": "Ruy Lopez middlegame-like position",
+      "source_type": "san_sequence",
+      "setup_moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Ba4",
+        "Nf6",
+        "O-O",
+        "Be7",
+        "Re1",
+        "b5",
+        "Bb3",
+        "d6",
+        "c3",
+        "O-O",
+        "h3"
+      ],
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 b - - 0 9"
+    },
+    {
+      "name": "simple_endgame",
+      "description": "Simple rook-and-kings endgame position",
+      "source_type": "fen",
+      "setup_moves_san": [],
+      "fen": "8/8/8/4k3/8/4K3/8/4R3 w - - 0 1"
+    }
+  ]
+}

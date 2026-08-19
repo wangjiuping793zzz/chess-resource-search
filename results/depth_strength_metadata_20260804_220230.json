@@ -1,0 +1,43 @@
+{
+  "experiment_timestamp": "20260804_220230",
+  "experiment_name": "formal_depth_strength_matches",
+  "baseline_depth": 2,
+  "challenger_depths": [
+    2
+  ],
+  "algorithm": "ordered",
+  "opening_count": 2,
+  "games_per_depth": 4,
+  "scheduled_games": 4,
+  "max_engine_plies": 40,
+  "colour_control": "Each opening is played twice: challenger as White and Black.",
+  "truncation_policy": "Truncated games use result=\"*\" and are excluded from the primary completed-game score rate.",
+  "primary_strength_metric": "Score rate over completed games.",
+  "node_counting_convention": "Recursive successor positions are counted; root excluded.",
+  "timer": "time.perf_counter",
+  "result_csv": "results/depth_strength_final_results_20260804_220230.csv",
+  "summary_csv": "results/depth_strength_summary_20260804_220230.csv",
+  "checkpoint_csv": "results/depth_strength_checkpoint_20260804_220230.csv",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_chess_version": "1.11.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "openings": [
+    {
+      "name": "starting_position",
+      "family": "starting_position",
+      "moves": [],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "name": "open_game",
+      "family": "open_game",
+      "moves": [
+        "e4",
+        "e5"
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+    }
+  ]
+}

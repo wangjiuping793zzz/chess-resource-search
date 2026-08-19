@@ -1,0 +1,5 @@
+# Chess rules, board representation, legal move generation, and game-state handling
+python-chess==1.999
+
+# Plot generation for experimental results
+matplotlib==3.11.1
